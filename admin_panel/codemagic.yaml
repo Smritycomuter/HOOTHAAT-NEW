@@ -1,0 +1,14 @@
+workflows:
+  admin-web:
+    name: Hoothaat Admin Control Panel Web
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+    scripts:
+      - name: Get dependencies
+        script: flutter pub get
+      - name: Build web
+        script: flutter build web --release
+    artifacts:
+      - build/web/**
